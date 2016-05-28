@@ -1,0 +1,30 @@
+//== Font weights
+.light    { font-weight: 300; }
+.normal   { font-weight: 400; }
+.medium   { font-weight: 500; }
+.semibold { font-weight: 600; }
+.bold     { font-weight: 700; }
+
+
+//== Transitions
+.trans(@args) {
+  -webkit-transition: @args;
+          transition: @args;
+}
+
+
+//== Transformations
+.translateX(@args) {
+  -webkit-transform: translateX(@args);
+     -moz-transform: translateX(@args);
+      -ms-transform: translateX(@args);
+       -o-transform: translateX(@args);
+          transform: translateX(@args);
+}
+.translateY(@args) {
+  -webkit-transform: translateY(@args);
+     -moz-transform: translateY(@args);
+      -ms-transform: translateY(@args);
+       -o-transform: translateY(@args);
+          transform: translateY(@args);
+}
