@@ -8,6 +8,10 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 header, section {
   display: block;
@@ -15,19 +19,27 @@ header, section {
 
 // Infographic
 .infographic-section {
-  padding: 60px 0;
+  padding: 40px 10px;
+  @media @min901 { padding: 60px 0; }
 }
 
 .infographic-container {
   position: relative;
   margin: 0 auto;
-  width: 350px;
-  height: 350px;
-  @media @min1281 {
-    width: 400px;
+  @media @min901 { width: 400px; height: 400px; }
+  &.hidden {
+    .elements-holder { visibility: hidden; opacity: 0; }
+  }
+  @media @max900 { overflow: hidden; text-align: center; }
+}
+
+.elements-holder {
+  position: relative;
+  @media @max900 {
+    display: inline-block;
+    width: 300px;
     height: 400px;
   }
-  &.hidden { visibility: hidden; opacity: 0; }
 }
 
 .element {
@@ -63,62 +75,66 @@ header, section {
   .st0{fill:#124c05;}
 }
 
-.point-1 {
-  top: -50px;
-  left: 100px;
-  @media @min1281 {
-    top: -50px;
-    left: 100px;
+
+
+.img-labels {
+  @media @min901 {
+    position: absolute;
+    top: 220px;
+    left: 200px;
   }
+  @media @max900 {
+    display: table;
+    margin: 0 auto;
+    padding-left: 60px;
+    width: 300px;
+    height: 400px;
+  }
+}
+
+.labels-inner {
+  @media @max900 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+
+.point-1 {
+  @media @min901 { top: -50px; left: 100px; }
   .label-title .line {
-    width: 420px;
+    @media @min901 { width: 390px; }
     @media @min1281 { width: 420px; }
   }
   .border-line { background: #124c05; }
 }
 .point-2 {
-  top: 10px;
-  left: -430px;
-  @media @min1281 {
-    top: 10px;
-    left: -430px;
-  }
+  @media @min901 { top: 10px; left: -430px; }
   .label-title .line {
-    width: 312px;
+    @media @min901 { width: 302px; }
     @media @min1281 { width: 312px; }
   }
   .border-line { background: #063501; }
 }
 .point-3 {
-  top: -197px;
-  left: 80px;
-  @media @min1281 {
-    top: -197px;
-    left: 80px;
-  }
+  @media @min901 { top: -177px; left: 80px; }
+  @media @min1281 { top: -197px; }
   .label-title .line {
-    width: 370px;
-    @media @min1281 { width: 370px; }
+    @media @min901 { width: 370px; }
   }
   .border-line { background: #0F9305; }
 }
 .point-4 {
-  top: -120px;
-  left: -450px;
-  @media @min1281 {
-    top: -120px;
-    left: -450px;
-  }
+  @media @min901 { top: -120px; left: -450px; }
   .label-title .line {
-    width: 270px;
-    @media @min1281 { width: 270px; }
+    @media @min901 { width: 270px; }
   }
   .border-line { background: #80E252; }
 }
 
 .point-1,
 .point-3 {
-  text-align: right;
+  @media @min901 { text-align: right; }
   .label-title {
     .line { right: 0; }
     .line-cover {
@@ -145,15 +161,15 @@ header, section {
 
 .path-title {
   display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.img-labels {
-  position: absolute;
-  top: 220px;
-  left: 200px;
+  @media @min901 {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  .txt { padding: 0 15px; }
+  .border-line {
+    @media @max900 { left: 0; right: auto; }
+  }
 }
 
 .label-title {
@@ -190,6 +206,7 @@ header, section {
     width: 100%;
     height: 1px;
     background: #595a61;
+    @media @max900 { display: none; }
   }
 }
 
@@ -208,4 +225,5 @@ header, section {
   width: 100%;
   height: 100%;
   background: #fff;
+  @media @max900 { display: none; }
 }

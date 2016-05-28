@@ -24,28 +24,52 @@ html {
 *:after {
   box-sizing: inherit;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 header,
 section {
   display: block;
 }
 .infographic-section {
-  padding: 60px 0;
+  padding: 40px 10px;
+}
+@media only screen and (min-width: 901px) {
+  .infographic-section {
+    padding: 60px 0;
+  }
 }
 .infographic-container {
   position: relative;
   margin: 0 auto;
-  width: 350px;
-  height: 350px;
 }
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 901px) {
   .infographic-container {
     width: 400px;
     height: 400px;
   }
 }
-.infographic-container.hidden {
+.infographic-container.hidden .elements-holder {
   visibility: hidden;
   opacity: 0;
+}
+@media only screen and (max-width: 900px) {
+  .infographic-container {
+    overflow: hidden;
+    text-align: center;
+  }
+}
+.elements-holder {
+  position: relative;
+}
+@media only screen and (max-width: 900px) {
+  .elements-holder {
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+  }
 }
 .element {
   position: absolute;
@@ -81,18 +105,39 @@ section {
 #circle .st0 {
   fill: #124c05;
 }
-.point-1 {
-  top: -50px;
-  left: 100px;
+@media only screen and (min-width: 901px) {
+  .img-labels {
+    position: absolute;
+    top: 220px;
+    left: 200px;
+  }
 }
-@media only screen and (min-width: 1281px) {
+@media only screen and (max-width: 900px) {
+  .img-labels {
+    display: table;
+    margin: 0 auto;
+    padding-left: 60px;
+    width: 300px;
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .labels-inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 901px) {
   .point-1 {
     top: -50px;
     left: 100px;
   }
 }
-.point-1 .label-title .line {
-  width: 420px;
+@media only screen and (min-width: 901px) {
+  .point-1 .label-title .line {
+    width: 390px;
+  }
 }
 @media only screen and (min-width: 1281px) {
   .point-1 .label-title .line {
@@ -102,18 +147,16 @@ section {
 .point-1 .border-line {
   background: #124c05;
 }
-.point-2 {
-  top: 10px;
-  left: -430px;
-}
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 901px) {
   .point-2 {
     top: 10px;
     left: -430px;
   }
 }
-.point-2 .label-title .line {
-  width: 312px;
+@media only screen and (min-width: 901px) {
+  .point-2 .label-title .line {
+    width: 302px;
+  }
 }
 @media only screen and (min-width: 1281px) {
   .point-2 .label-title .line {
@@ -123,20 +166,18 @@ section {
 .point-2 .border-line {
   background: #063501;
 }
-.point-3 {
-  top: -197px;
-  left: 80px;
+@media only screen and (min-width: 901px) {
+  .point-3 {
+    top: -177px;
+    left: 80px;
+  }
 }
 @media only screen and (min-width: 1281px) {
   .point-3 {
     top: -197px;
-    left: 80px;
   }
 }
-.point-3 .label-title .line {
-  width: 370px;
-}
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 901px) {
   .point-3 .label-title .line {
     width: 370px;
   }
@@ -144,20 +185,13 @@ section {
 .point-3 .border-line {
   background: #0F9305;
 }
-.point-4 {
-  top: -120px;
-  left: -450px;
-}
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 901px) {
   .point-4 {
     top: -120px;
     left: -450px;
   }
 }
-.point-4 .label-title .line {
-  width: 270px;
-}
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 901px) {
   .point-4 .label-title .line {
     width: 270px;
   }
@@ -165,9 +199,11 @@ section {
 .point-4 .border-line {
   background: #80E252;
 }
-.point-1,
-.point-3 {
-  text-align: right;
+@media only screen and (min-width: 901px) {
+  .point-1,
+  .point-3 {
+    text-align: right;
+  }
 }
 .point-1 .label-title .line,
 .point-3 .label-title .line {
@@ -217,14 +253,22 @@ section {
 }
 .path-title {
   display: block;
-  position: absolute;
-  width: 0;
-  height: 0;
 }
-.img-labels {
-  position: absolute;
-  top: 220px;
-  left: 200px;
+@media only screen and (min-width: 901px) {
+  .path-title {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+.path-title .txt {
+  padding: 0 15px;
+}
+@media only screen and (max-width: 900px) {
+  .path-title .border-line {
+    left: 0;
+    right: auto;
+  }
 }
 .label-title {
   position: relative;
@@ -272,6 +316,11 @@ section {
   height: 1px;
   background: #595a61;
 }
+@media only screen and (max-width: 900px) {
+  .label-title .line-cover {
+    display: none;
+  }
+}
 .border-line {
   position: absolute;
   top: 0;
@@ -286,4 +335,9 @@ section {
   width: 100%;
   height: 100%;
   background: #fff;
+}
+@media only screen and (max-width: 900px) {
+  .title-cover {
+    display: none;
+  }
 }
