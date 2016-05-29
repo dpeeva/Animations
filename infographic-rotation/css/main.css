@@ -79,6 +79,9 @@ section {
   height: 100%;
   background: transparent;
 }
+.element:hover {
+  pointer-events: none;
+}
 .element svg {
   position: absolute;
   top: 0;
@@ -100,7 +103,7 @@ section {
   fill: #fff;
 }
 #arc-1 .st1 {
-  fill: #0F9305;
+  fill: #ffe400;
 }
 #circle .st0 {
   fill: #124c05;
@@ -183,7 +186,7 @@ section {
   }
 }
 .point-3 .border-line {
-  background: #0F9305;
+  background: #ffe400;
 }
 @media only screen and (min-width: 901px) {
   .point-4 {
